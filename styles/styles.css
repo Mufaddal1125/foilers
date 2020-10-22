@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body, html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1{
+    font-size: 5em;
+    font-family: "Fredoka One", cursive;
+}
+
+.logout{
+  margin: auto;
+}
+
+
+
+.form-group{
+    margin: 20px 0;
+}
+
+.check-lg{
+    width: 50px;
+    height: 30px;
+}
+
+.cust-concern{
+    display: inline;
+}
+
+form{
+    padding: 30px;
+}
+
+.terms{
+    margin: 30px 0;
+}
+
+label{
+    font-size: 1.5rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container h1{
+    margin: 50px;
+}
+
+.cards{
+    margin: 5rem auto;
+    
+}
+a .card-action{
+    margin: 5rem;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: 0.3s ease;
+}
+
+a .card-action h1{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+a .card-action:hover{
+    transform: scale(0.98);
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+@media only screen and (max-width: 600px){
+    .row .col label{
+        display: block;
+        font-size: 5vw;
+    }
+}
