@@ -7,6 +7,9 @@ require("./partials/header.php");
 </head>
 
 <body>
+<?php
+require('partials/message.php');
+?>
     <div class="container">
         <div class="header row clearfix">
             <h1 class="col">Foilers Dubai</h1>
@@ -187,11 +190,11 @@ require("./partials/header.php");
                         </div>
                     </div>
                     <div class="Customer-Concern">
-                        <h2>No. Customer Concerns</h2>
+                        <h2>Customer Concerns</h2>
                         <div class="form-group row clearfix">
-                            <label for="custconcern1" class="col-sm-2 col-form-label float-left">1. </label>
+                            <label for="cutomer_concern[]" class="col-sm-2 col-form-label float-left">1. </label>
                             <div class="col-sm-10 float-left">
-                                <input type="text" name="custconcern1" id="" class="form-control cust-concern ">
+                                <input type="text" name="customer_concern[]" id="" class="form-control cust-concern ">
                             </div>
                         </div>
                     </div>

@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php 
+require "partials/header.php";
+?>
     <title>Login to Foilers Dubai</title>
 </head>
 
 <body>
+    <? require "partials/message.php";?>
     <div class="container">
         <div class="header">
             <h1>Login</h1>
@@ -24,6 +22,7 @@
             <input type="submit" name="login" value="Login"> <span>Or <a href="./register.php">Register Here</a></span>
         </form>
     </div>
-</body>
 
-</html>
+    <?php 
+    require "partials/footer.php";
+    ?>

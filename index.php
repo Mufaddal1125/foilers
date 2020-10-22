@@ -7,7 +7,9 @@ require('partials/header.php');
 </head>
 
 <body>
-
+<?php
+require('partials/message.php');
+?>
     <div class="container">
         <h1 class="m-6">Welcome to Foilers Dubai</h1>
 

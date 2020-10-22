@@ -11,7 +11,7 @@ $result = $conn->query($sql);
 </head>
 
 <body>
-<?php require "partials/message.php"; ?>
+    <?php require "partials/message.php"; ?>
     <div class="container">
         <h1>List of Cars</h1>
         <?php
@@ -31,16 +31,16 @@ $result = $conn->query($sql);
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <?php
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<td>{$row['id']}</td> <td>{$row['customer_name']}</td><td>{$row['date']}</td><td>{$row['time']}</td>
+
+                    <?php
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr><td>{$row['id']}</td> <td>{$row['customer_name']}</td><td>{$row['date']}</td><td>{$row['time']}</td>
                         <td>{$row['work_no']}</td><td>{$row['job_no']}</td><td>{$row['Status']}</td><td><button type='button' onclick='update_id(this.value)' class='btn btn-primary' value='{$row['id']}' data-toggle='modal' data-target='#update_status'>
                         Update Status
-                      </button></td>";
-                        }
-                        ?>
-                    </tr>
+                      </button></td></tr>";
+                    }
+                    ?>
+
                 </tbody>
             </table>
             <!-- Modal -->
@@ -82,8 +82,8 @@ $result = $conn->query($sql);
     <script>
         const input_id = document.getElementById("update_id");
 
-        function update_id(id){
-            input_id.value=id;
+        function update_id(id) {
+            input_id.value = id;
         }
     </script>
 

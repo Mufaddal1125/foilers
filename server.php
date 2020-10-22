@@ -56,14 +56,13 @@ if (isset($_POST['register'])) {
     $password = htmlspecialchars($_POST['password']);
     $email = htmlspecialchars($_POST['email']);
     $date = date('Y-m-d H:i:s');
-    echo "\n" . $date . "\n";
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
     $sql = "INSERT INTO users(name, password, email, tof) VALUES('$name', '$password_hash', '$email', NOW())";
     $check = "SELECT * FROM users WHERE name='$name' OR email='$email'";
     $result = $conn->query($check);
     if ($result->num_rows == 1) {
-        $_SESSION['message'] = 'Error User Already Registered';
-        echo "'Error User Already Registered'";
+        $_SESSION['msg'] = 'Error User Already Registered';
+        $_SESSION['msg_type'] = 'warning';
         header("location: register.php");
     } else {
         $result = $conn->query($sql);
@@ -84,25 +83,46 @@ if (isset($_POST['addCar'])) {
     $jobno = htmlspecialchars(filter_var($_POST['job_no'], FILTER_SANITIZE_NUMBER_INT));
     $customername = htmlspecialchars(filter_var($_POST['customer_name'], FILTER_SANITIZE_STRING));
     $email = htmlspecialchars(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL));
+    $customer_concern_list = $_POST['customer_concern'];
+    print_r($customer_concern_list);
     $checklist = $_POST['check_list'];
 
     $sql = "INSERT INTO car(time, date, work_no, job_no, customer_name, email) VALUES('$time', '$date', $workno, $jobno, '$customername', '$email')";
+    try {
+        if ($conn->query($sql) === true) {
+            $id = $conn->insert_id;
+            if (!empty($customer_concern_list)) {
+                $cust_id = 1;
+                foreach ($customer_concern_list as $selected) {
+                    $upd = "UPDATE car SET customer_concern_{$cust_id}='{$selected}' WHERE id = {$id}";
 
-    if ($conn->query($sql) === true) {
-        $id = $conn->insert_id;
-        echo "inserted!!! id is $id";
-        if (!empty($checklist)) {
-            foreach ($checklist as $selected) {
-                $upd = "UPDATE car SET $selected=1 WHERE id = $id";
-                if ($conn->query($upd) === true) {
-                    echo "updated " . $selected . "<br>";
-                } else {
-                    echo "update Error" . $conn->error;
+                    if ($conn->query($upd) === true) {
+                        $cust_id++;
+                    } else {
+                        throw new Exception("update Error" . $conn->error);
+                    }
                 }
             }
+            if (!empty($checklist)) {
+                foreach ($checklist as $selected) {
+                    $upd = "UPDATE car SET $selected=1 WHERE id = $id";
+                    if ($conn->query($upd) === true) {
+                        echo "updated " . $selected . "<br>";
+                    } else {
+                        throw new Exception("update Error" . $conn->error);
+                    }
+                }
+            }
+            $_SESSION['msg'] = "Successfully Inserted Car";
+            $_SESSION['msg_type'] = "success";
+            header("location: add_car.php");
+        } else {
+            throw new Exception("error " . $conn->error);
         }
-    } else {
-        echo "error " . $conn->error;
+    } catch (Exception $e) {
+        $_SESSION['msg'] = $e->getMessage();
+        $_SESSION['msg_type'] = "danger";
+        header("location: add_car.php");
     }
 }
 
@@ -125,7 +145,7 @@ if (isset($_POST['update_status'])) {
             $row = $user_result->fetch_array();
             try {
                 //Server settings
-                $mail->SMTPDebug = 4;                      // Enable verbose debug output
+                $mail->SMTPDebug = SMTP::DEBUG_OFF;                      // Enable verbose debug output
                 $mail->isSMTP();                                            // Send using SMTP
                 $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
                 $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
@@ -161,7 +181,7 @@ if (isset($_POST['update_status'])) {
             } catch (Exception $e) {
                 $_SESSION['msg'] = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                 $_SESSION['msg_type'] = "success";
-                header("location: status.php"); 
+                header("location: status.php");
             }
         } else {
             echo "error user cannot be found " . $conn->error;
