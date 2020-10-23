@@ -35,9 +35,14 @@ $result = $conn->query($sql);
                     <?php
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr><td>{$row['id']}</td> <td>{$row['customer_name']}</td><td>{$row['date']}</td><td>{$row['time']}</td>
-                        <td>{$row['work_no']}</td><td>{$row['job_no']}</td><td>{$row['Status']}</td><td><button type='button' onclick='update_id(this.value)' class='btn btn-primary' value='{$row['id']}' data-toggle='modal' data-target='#update_status'>
+                        <td>{$row['work_no']}</td><td>{$row['job_no']}</td><td>{$row['Status']}</td><td>
+                        <button type='button' onclick='update_id(this.value)' class='btn btn-primary' value='{$row['id']}' data-toggle='modal' data-target='#update_status'>
                         Update Status
-                      </button></td></tr>";
+                      </button>
+                      <a type='button' class='btn btn-info' href='details.php?id={$row['id']}'>
+                        View Details
+                      </a>
+                      </td></tr>";
                     }
                     ?>
 

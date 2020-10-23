@@ -8,7 +8,7 @@ require "partials/header.php";
     <? require "partials/message.php";?>
     <div class="container">
         <div class="header">
-            <h1>Login</h1>
+            <h1>Register</h1>
         </div>
         <form action="./server.php" method="post" class="register">
             <div class="form-group">
@@ -23,7 +23,7 @@ require "partials/header.php";
                 <label for="email">email</label>
                 <input type="email" placeholder="Email" name="email" class="form-control" required>
             </div>
-            <input type="submit" name="register" value="Register">
+            <input type="submit" class='form-control' name="register" value="Register">
         </form>
     </div>
 

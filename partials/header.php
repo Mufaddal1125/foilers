@@ -5,7 +5,9 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 if (!isset($_SESSION['user'])) {
-    header("location: login.php");
+    if ($_SERVER['PHP_SELF'] !== '/foilers/login.php') {
+        // header("location: login.php");
+    }
 }
 
 ?>

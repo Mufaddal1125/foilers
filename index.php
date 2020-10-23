@@ -7,30 +7,36 @@ require('partials/header.php');
 </head>
 
 <body>
-<?php
-require('partials/message.php');
-?>
+    <?php
+    require('partials/message.php');
+    ?>
     <div class="container">
-        <h1 class="m-6">Welcome to Foilers Dubai</h1>
-
-        
-            <div class="row justify-content-around cards">
-                <div class="col">
-                    <a href="./status.php">
-                        <div class="card-action">
-                            <h1>Check Status of Car</h1>
-                        </div>
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="./add_car.php">
-                        <div class="card-action">
-                            <h1>Add Car to Service</h1>
-                        </div>
-                    </a>
-                </div>
+        <div class="header">
+            <h1 class="m-6">Welcome to Foilers Dubai</h1>
+            <div class="logout col float-right">
+                <form type='get' action="server.php" name="logout">
+                    <input type="submit" name="logout" id="logout" value="Logout" class="btn btn-primary">
+                </form>
             </div>
-        
+        </div>
+
+        <div class="row justify-content-center cards">
+            <div class="col">
+                <a href="./status.php">
+                    <div class="card-action">
+                        <h1>Check Status of Car</h1>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="./add_car.php">
+                    <div class="card-action">
+                        <h1>Add Car to Service</h1>
+                    </div>
+                </a>
+            </div>
+        </div>
+
 
     </div>
 
