@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2020 at 10:25 AM
+-- Generation Time: Oct 24, 2020 at 05:07 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -61,6 +61,11 @@ CREATE TABLE `car` (
   `head_light` tinyint(1) NOT NULL DEFAULT 0,
   `front_fascia` tinyint(1) NOT NULL DEFAULT 0,
   `bumper_molding` tinyint(1) NOT NULL DEFAULT 0,
+  `customer_concern_1` varchar(500) NOT NULL,
+  `customer_concern_2` varchar(500) NOT NULL,
+  `customer_concern_3` varchar(500) NOT NULL,
+  `customer_concern_4` varchar(500) NOT NULL,
+  `customer_concern_5` varchar(500) NOT NULL,
   `Status` varchar(50) NOT NULL DEFAULT 'Repair Work Begins'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -68,8 +73,12 @@ CREATE TABLE `car` (
 -- Dumping data for table `car`
 --
 
-INSERT INTO `car` (`id`, `time`, `date`, `work_no`, `job_no`, `customer_name`, `email`, `full_wrap`, `pdr`, `ppf`, `backtakleen`, `tint`, `decals`, `polish_detailing`, `branding`, `sound_system`, `ceramic`, `glassparency`, `roof`, `hood`, `trunk`, `right_door_1`, `right_door_2`, `right_front_bumper`, `right_rear_bumper`, `left_door_1`, `left_door_2`, `left_front_bumper`, `left_rear_bumper`, `grill`, `head_light`, `front_fascia`, `bumper_molding`, `Status`) VALUES
-(2, '838:59:59', '2020-10-08', 2147483647, 51588123, 'rock', 'mufaddalpatanwala555@gmail.com', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 'Finishing Touches, Test Drive, and Completion');
+INSERT INTO `car` (`id`, `time`, `date`, `work_no`, `job_no`, `customer_name`, `email`, `full_wrap`, `pdr`, `ppf`, `backtakleen`, `tint`, `decals`, `polish_detailing`, `branding`, `sound_system`, `ceramic`, `glassparency`, `roof`, `hood`, `trunk`, `right_door_1`, `right_door_2`, `right_front_bumper`, `right_rear_bumper`, `left_door_1`, `left_door_2`, `left_front_bumper`, `left_rear_bumper`, `grill`, `head_light`, `front_fascia`, `bumper_molding`, `customer_concern_1`, `customer_concern_2`, `customer_concern_3`, `customer_concern_4`, `customer_concern_5`, `Status`) VALUES
+(2, '838:59:59', '2020-10-08', 2147483647, 51588123, 'rock', 'mufaddalpatanwala555@gmail.com', 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, '', '', '', '', '', 'Body Work, Reassembly, and Paint'),
+(18, '00:00:00', '2020-10-22', 4, 5, 'Bella', 'mufaddal5211@hotmail.com', 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 'Should take care of car properly', 'Should take care of car properly', 'Should take care of car properly', '', '', 'Repair Work Begins'),
+(19, '00:00:00', '2020-10-14', 45545489, 84894, 'Funny', 'mufaddal1125@gmail.com', 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 'Should take care of car properly', 'Should take care of car properly', 'Should take care of car properly', '', '', 'Body Work, Reassembly, and Paint'),
+(20, '00:00:00', '2020-10-10', 123456, 123456, 'Mufaddal', 'mufaddal1125@gmail.com', 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 'Customer needs urgently', 'Should take care of car properly', 'Wash Properly', '', '', 'Repair Work Begins'),
+(21, '11:43:00', '2020-09-30', 12345, 12345, 'Ron', 'drive.2.mufaddal@gmail.com', 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 'Should take care of car properly', 'Customer needs urgently', '', '', '', 'Repair Work Begins');
 
 -- --------------------------------------------------------
 
@@ -116,7 +125,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `car`
 --
 ALTER TABLE `car`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `users`
