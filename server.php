@@ -77,7 +77,7 @@ if (isset($_POST['register'])) {
 
 if (isset($_POST['addCar'])) {
 
-    $time =  strtotime($_POST['time']);
+    $time =  htmlspecialchars($_POST['time']);
     $date = date('Y-m-d', strtotime($_POST['date']));
     $workno = htmlspecialchars(filter_var($_POST['work_no'], FILTER_SANITIZE_NUMBER_INT));
     $jobno = htmlspecialchars(filter_var($_POST['job_no'], FILTER_SANITIZE_NUMBER_INT));

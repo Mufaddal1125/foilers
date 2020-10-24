@@ -94,3 +94,7 @@ a .card-action:hover{
         font-size: 5vw;
     }
 }
+/* 
+svg #right *:hover:not(#rear_wheel, #front_wheel){
+    fill: aqua;
+} */

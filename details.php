@@ -21,7 +21,8 @@ require "server.php";
         </div>
         <?php
 
-        function check_if($bool){
+        function check_if($bool)
+        {
             if ($bool) {
                 echo '<svg class="bi text-success" width="32" height="32" fill="currentColor">
                                             <use xlink:href="node_modules\bootstrap-icons\bootstrap-icons.svg#check-square-fill"/>
@@ -37,7 +38,7 @@ require "server.php";
             $sql = "SELECT * FROM car WHERE id={$_GET['id']}";
             $result = $conn->query($sql);
             if ($result->num_rows > 0 && $result->num_rows < 2) {
-                $row = $result->fetch_array();
+                $row = $result->fetch_assoc();
         ?>
 
                 <div class="row">
@@ -226,6 +227,22 @@ require "server.php";
                             ?></p>
                     </div>
                 </div>
+                <h1 class="mb-6">Customer Concerns</h1>
+                <dl class="row text-center" style="font-size: larger;">
+                    <?php
+                    // print_r($row);
+                    $customer_concern = array_slice($row, -6, 5);
+                    $i = 1;
+
+                    foreach ($customer_concern as $values) {
+                        if (!empty($values)) {
+                            echo "<dt class='col-sm-3'>Customer Concern $i</dt>
+                            <dd class='col-sm-9 text-left'>$values</dd>";
+                            $i++;
+                        }
+                    }
+                    ?>
+                </dl>
     </div>
 </body>
 
