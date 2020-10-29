@@ -113,7 +113,7 @@ if (isset($_POST['addCar'])) {
                     }
                 }
             }
-            $_SESSION['msg'] = "Successfully Inserted Car";
+            $_SESSION['msg'] = "Successfully Added Car to Service";
             $_SESSION['msg_type'] = "success";
             header("location: add_car.php");
         } else {

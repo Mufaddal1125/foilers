@@ -17,9 +17,11 @@ require "partials/header.php";
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="text" placeholder="Password" name="password" class="form-control" required>
+                <input type="password" placeholder="Password" name="password" class="form-control" required>
             </div>
-            <input type="submit" name="login" value="Login"> <span>Or <a href="./register.php">Register Here</a></span>
+            <div style="margin: 20px 0">
+                <input type="submit" name="login" value="Login"> <span>Or <a href="./register.php">Register Here</a></span>
+            </div>
         </form>
     </div>
 

@@ -15,6 +15,9 @@ require "server.php";
 </head>
 
 <body>
+    <?php
+    require('partials/navbar.php');
+    ?>
     <div class="container">
         <div class="header">
             <h1>Details</h1>

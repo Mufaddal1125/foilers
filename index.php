@@ -10,6 +10,9 @@ require('partials/header.php');
     <?php
     require('partials/message.php');
     ?>
+    <?php
+    require('partials/navbar.php');
+    ?>
     <div class="container">
         <div class="header">
             <h1 class="m-6">Welcome to Foilers Dubai</h1>

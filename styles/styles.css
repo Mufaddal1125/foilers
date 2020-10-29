@@ -1,66 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
-body, html{
+body,
+html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.header{
+.header {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.header h1{
+.header h1 {
     font-size: 5em;
     font-family: "Fredoka One", cursive;
 }
 
-.logout{
-  margin: auto;
+.logout {
+    margin: auto;
 }
 
 
 
-.form-group{
+.form-group {
     margin: 20px 0;
 }
 
-.check-lg{
+.check-lg {
     width: 50px;
     height: 30px;
 }
 
-.cust-concern{
+.cust-concern {
     display: inline;
 }
 
-form{
+form {
     padding: 30px;
 }
 
-.terms{
+.terms {
     margin: 30px 0;
 }
 
-label{
+label {
     font-size: 1.5rem;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-.container h1{
+.container h1 {
     margin: 50px;
 }
 
-.cards > .col {
+.cards>.col {
 
-   margin: auto;
+    margin: auto;
 }
-a .card-action{
+
+a .card-action {
     margin: 2rem auto;
     padding: 20px;
     display: flex;
@@ -70,31 +72,41 @@ a .card-action{
     width: 300px;
     height: 300px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     transition: 0.3s ease;
 }
 
-a .card-action h1{
+a .card-action h1 {
     text-decoration: none;
     color: white;
     text-align: center;
 }
 
-a .card-action:hover{
+a .card-action:hover {
     transform: scale(0.98);
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-@media only screen and (max-width: 600px){
-    .header h1{
+@media only screen and (max-width: 600px) {
+    .header h1 {
         font-size: 10vw;
     }
-    .row .col label{
+
+    .row .col label {
         display: block;
         font-size: 5vw;
     }
 }
-/* 
-svg #right *:hover:not(#rear_wheel, #front_wheel){
+
+svg #right *:hover {
     fill: aqua;
-} */
+}
+
+.navbar{
+    height: 10vh;
+}
+
+.navbar .container .navbar-brand {
+    font-size: 2em;
+    font-family: "Fredoka One", cursive;
+}

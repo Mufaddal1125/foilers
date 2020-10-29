@@ -23,7 +23,8 @@ require "partials/header.php";
                 <label for="email">email</label>
                 <input type="email" placeholder="Email" name="email" class="form-control" required>
             </div>
-            <input type="submit" class='form-control' name="register" value="Register">
+
+            <button type="submit" class='btn btn-primary' style="margin: 20px 0" name="register" >Register</button>
         </form>
     </div>
 

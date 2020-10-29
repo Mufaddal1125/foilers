@@ -12,6 +12,9 @@ $result = $conn->query($sql);
 
 <body>
     <?php require "partials/message.php"; ?>
+    <?php
+    require('partials/navbar.php');
+    ?>
     <div class="container">
         <h1>List of Cars</h1>
         <?php
